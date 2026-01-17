@@ -16,3 +16,11 @@ Three typed memory collections are defined:
 - interaction_memory: conversation traces and user intent(EQ)
 
 All future retrieval and memory evolution operates exclusively on these collections.
+
+## Embeddings
+
+Text is converted into semantic vector representations using the
+sentence-transformers model `all-MiniLM-L6-v2`.
+
+These vectors capture semantic meaning and are used as the primary
+signal for similarity search in Qdrant.
