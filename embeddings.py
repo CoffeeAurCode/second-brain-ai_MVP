@@ -16,6 +16,7 @@ def embed(text: Union[str, None]) -> List[float]:
     return embedding.tolist()
 
 if __name__ == "__main__":
+    #Test to see if the module works alone
     test_text = "Hello, world!"
     vector = embed(test_text)
     print (f"Test input: '{test_text}'")

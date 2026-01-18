@@ -24,3 +24,10 @@ sentence-transformers model `all-MiniLM-L6-v2`.
 
 These vectors capture semantic meaning and are used as the primary
 signal for similarity search in Qdrant.
+
+## Memory Writing
+The system writes structured memories into Qdrant using semantic embeddings.
+Each memory is stored with explicit metadata such as type, topic/intent,
+importance, and creation time.
+
+This enables controlled retrieval and future memory evolution.
