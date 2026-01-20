@@ -48,3 +48,15 @@ Importantly, this does not change the architecture or capabilities of the system
 
 This design choice improves system reliability and reflects real-world engineering practices where stable lower-level interfaces are preferred when higher-level abstractions are inconsistent.
 All memory retrieval is performed via semantic vector search with payload-based filtering, demonstrating memory recall as an active system capability rather than passive storage.
+
+## Memory Evolution
+
+Memory in the system is not static. Each memory item carries an importance
+score that evolves over time.
+
+- Frequently retrieved memories are reinforced
+- Older memories gradually decay
+- Low-importance memories are removed
+
+This enables long-term memory management beyond a single prompt and
+prevents uncontrolled memory growth.
