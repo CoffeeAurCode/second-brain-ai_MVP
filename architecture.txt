@@ -1,0 +1,14 @@
+User Query (for mvp we use demo.py)
+   ↓
+Embedding (sentence-transformers)
+   ↓
+Qdrant Vector Search
+   ├── knowledge_memory
+   ├── interaction_memory
+   ↓
+Retrieved Memories
+   ↓
+Memory Evolution
+   ├── Reinforcement
+   ├── Decay
+   └── Cleanup

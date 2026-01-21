@@ -3,7 +3,20 @@
 this project is a minimal Second brain AI system using qdrant as the primary vector memory store
 
 
-Status: Environment Setup complete (YAY!)
+## How to Run
+
+1. Start Qdrant locally:
+   docker run -p 6333:6333 qdrant/qdrant
+
+2. Install dependencies:
+   pip install -r requirements.txt
+
+3. Run the demo:
+   python demo.py
+
+The demo will store knowledge, retrieve relevant memories,
+apply memory evolution, and retrieve again.
+
 
 
 ## Memory Architecture
@@ -60,3 +73,54 @@ score that evolves over time.
 
 This enables long-term memory management beyond a single prompt and
 prevents uncontrolled memory growth.
+
+Retrieved memories are reinforced by increasing their importance score,
+creating a feedback loop where frequently used knowledge becomes more persistent.
+
+
+## Societal Relevance
+
+Modern students and knowledge workers suffer from fragmented information
+spread across notes, documents, and conversations.
+
+This project demonstrates a Second Brain system that:
+- Retains important knowledge over time
+- Forgets irrelevant information
+- Reinforces frequently used concepts
+
+Such systems can reduce cognitive overload, support long-term learning,
+and improve knowledge reuse without relying on constant re-prompting.
+
+
+## Limitations & Future Work
+
+This system is intentionally minimal to prioritize correctness and clarity.
+Future work could include multimodal memory, user-specific personalization,
+and learned reinforcement policies instead of fixed rules.
+
+## Multimodal Support (Design Consideration)
+
+This MVP focuses on text-based semantic memory to prioritize correctness,
+clarity, and robustness within the given time constraints.
+
+However, the architecture is intentionally designed to be modality-agnostic.
+Qdrant collections, payload schemas, and retrieval logic can directly support
+additional modalities such as images, audio, code, or sensor data by storing
+their corresponding embeddings alongside modality metadata.
+
+For example:
+- Images → CLIP embeddings
+- Audio → Whisper or audio embedding models
+- Code → Code-specific embedding models
+
+No architectural changes are required to extend the system beyond text.
+To add multimodal later, you would only add:
+"modality": "image" | "audio" | "text"
+and use a different embedding function.
+
+Nothing else changes.
+
+
+Interaction memory is currently stored to capture user intent and conversation traces.
+It is not retrieved in the demo, as it primarily supports future context-aware
+and personalized behaviors rather than factual recall.

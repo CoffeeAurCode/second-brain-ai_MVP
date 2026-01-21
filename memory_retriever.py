@@ -36,6 +36,7 @@ def retrieve_knowledge(query: str, topic: Optional[str] = None, limit: int = 5) 
         for hit in data.get("result", []):
             item_payload = hit.get("payload", {})
             results_list.append({
+                "id": hit.get("id"), #id daalna bhul gaya tha
                 "text": item_payload.get("text", ""),
                 "payload": item_payload,
                 "score": hit.get("score",0.0)
@@ -66,6 +67,7 @@ def retrieve_interactions(query: str, limit: int = 3) -> List[Dict[str, Any]]:
         for hit in data.get("result", []):
             item_payload = hit.get("payload", {})
             results_list.append({
+                "id": hit.get("id"),
                 "text": item_payload.get("text", ""),
                 "payload": item_payload,
                 "score": hit.get("score",0.0)
