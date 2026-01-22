@@ -11,13 +11,20 @@ this project is a minimal Second brain AI system using qdrant as the primary vec
 2. Install dependencies:
    pip install -r requirements.txt
 
-3. Run the demo:
-   python demo.py
+3. Run the any of the demo file:
+   python Demo_1.py/Demo_2.py/Demo_3.py
 
 The demo will store knowledge, retrieve relevant memories,
 apply memory evolution, and retrieve again.
 
+## Dependencies
 
+This project uses Qdrant as the primary vector search engine.
+Qdrant is run locally using Docker, which is the official and recommended
+deployment method.
+
+Docker is required only to start the Qdrant service.
+All application logic runs in Python.
 
 ## Memory Architecture
 

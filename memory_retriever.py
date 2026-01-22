@@ -56,6 +56,7 @@ def retrieve_interactions(query: str, limit: int = 3) -> List[Dict[str, Any]]:
             "vector": vector,
             "limit":limit,
             "with_payload": True,
+            "score_threshold": 0.5, #Fix to get the most relevent interaction
             "filter":{
                 "must": must_conditions
             }
